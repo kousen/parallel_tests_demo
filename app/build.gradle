@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+
+test {
+    useJUnitPlatform {
+        // tagName should be either "individual" or "together"
+        // Default in gradle.properties is together
+        // Override using -PtagName=together on command line
+        includeTags tagName
+    }
+    maxParallelForks = (int) (Runtime.runtime.availableProcessors() / 2 + 1)
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+}
