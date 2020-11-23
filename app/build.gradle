@@ -5,7 +5,7 @@ plugins {
 test {
     useJUnitPlatform {
         // tagName should be either "individual" or "together"
-        // Default in gradle.properties is together
+        // Default in gradle.properties is individual
         // Override using -PtagName=together on command line
         includeTags tagName
     }
